@@ -78,7 +78,10 @@ h2{font-size:clamp(26px,4vw,40px);letter-spacing:-0.03em;line-height:1.2;margin:
 .sub{color:var(--muted);margin:0 0 36px;max-width:40em}
 h3{font-size:19px;letter-spacing:-0.02em;line-height:1.4;margin:0 0 6px}
 .subhead{margin:64px 0 16px}
-.subhead:first-of-type{margin-top:0}
+.sub + .subhead,.chips + .subhead{margin-top:0}
+.steps + .subhead{margin-top:72px;padding-top:40px;border-top:1px solid var(--line)}
+@media (max-width:560px){.steps + .subhead{margin-top:48px;padding-top:32px}}
+.gallery + .tip{margin-top:14px}
 .subhead p{color:var(--muted);font-size:15px}
 .grid{display:grid;gap:14px}
 .g3{grid-template-columns:repeat(3,1fr)}
