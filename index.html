@@ -1,0 +1,851 @@
+<!DOCTYPE html>
+<html lang="ja" data-lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>26FW THE HYUNDAI 表参道ポップアップ クリエイターガイド</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;800&family=Noto+Sans+KR:wght@400;500;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#ffffff; --surface:#f5f5f7; --line:#e3e3e8;
+  --text:#1d1d1f; --muted:#6e6e73; --accent:#0071e3; --accent-soft:#e8f2fd;
+  --warn-bg:#fdecec; --warn-text:#b3261e; --ink:#1d1d1f; --on-ink:#f5f5f7;
+  color-scheme:light;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#000000; --surface:#161618; --line:#2c2c30;
+    --text:#f5f5f7; --muted:#a1a1a6; --accent:#2997ff; --accent-soft:#0f2a46;
+    --warn-bg:#3b1715; --warn-text:#ff9a90; --ink:#1c1c1e; --on-ink:#f5f5f7;
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#000000; --surface:#161618; --line:#2c2c30;
+  --text:#f5f5f7; --muted:#a1a1a6; --accent:#2997ff; --accent-soft:#0f2a46;
+  --warn-bg:#3b1715; --warn-text:#ff9a90; --ink:#1c1c1e; --on-ink:#f5f5f7;
+  color-scheme:dark;
+}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-behavior:smooth;scroll-padding-top:calc(env(safe-area-inset-top,0px) + 72px)}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+body{margin:0;background:var(--bg);color:var(--text);
+  font-family:Pretendard,"Noto Sans KR",-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Malgun Gothic",sans-serif;
+  font-size:17px;line-height:1.65;letter-spacing:-0.01em;-webkit-font-smoothing:antialiased;word-break:keep-all;overflow-wrap:break-word}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;
+  background:color-mix(in srgb,var(--bg) 85%,transparent);backdrop-filter:saturate(180%) blur(16px)}
+a{color:var(--accent)}
+:focus-visible{outline:3px solid var(--accent);outline-offset:2px;border-radius:6px}
+.wrap{max-width:1040px;margin:0 auto;padding:0 24px}
+p{margin:0}
+
+/* nav */
+nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;
+  background:color-mix(in srgb,var(--bg) 85%,transparent);backdrop-filter:saturate(180%) blur(16px);
+  border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;align-items:center;gap:6px;height:56px}
+nav .brand{font-weight:800;letter-spacing:.04em;white-space:nowrap;margin-right:auto;font-size:15px}
+nav .links{display:flex;gap:4px;overflow-x:auto;scrollbar-width:none}
+nav .links::-webkit-scrollbar{display:none}
+nav .links a{color:var(--muted);text-decoration:none;font-size:14px;white-space:nowrap;padding:6px 12px;border-radius:999px}
+nav .links a:hover{color:var(--text)}
+nav .links a.on{color:var(--text);background:var(--surface);font-weight:600}
+@media (max-width:640px){nav .brand{display:none} nav .links{margin:0 -8px}}
+
+/* hero */
+.hero{padding:72px 0 8px}
+.kicker{color:var(--accent);font-weight:700;margin:0 0 12px;font-size:15px}
+.hero h1{font-size:clamp(32px,6vw,60px);line-height:1.15;letter-spacing:-0.035em;margin:0 0 20px;font-weight:800}
+.lede{color:var(--muted);font-size:clamp(16px,2.2vw,20px);max-width:36em}
+.facts{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:40px 0 0;padding:0;list-style:none}
+.facts li{background:var(--surface);border-radius:18px;padding:18px 20px;font-size:13px;color:var(--muted);display:flex;flex-direction:column;gap:4px}
+.facts strong{color:var(--text);font-size:17px;line-height:1.35}
+.facts .map{font-size:14px;font-weight:600;text-decoration:none;margin-top:auto;padding-top:6px}
+.facts .map:hover{text-decoration:underline}
+@media (max-width:860px){.facts{grid-template-columns:1fr 1fr}}
+@media (max-width:420px){.facts{grid-template-columns:1fr}}
+
+/* sections */
+section.block{padding:96px 0 0}
+.eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:14px;font-weight:700;color:var(--accent);margin-bottom:12px}
+.eyebrow b{display:grid;place-items:center;width:28px;height:28px;border-radius:50%;background:var(--accent-soft);font-size:13px}
+h2{font-size:clamp(26px,4vw,40px);letter-spacing:-0.03em;line-height:1.2;margin:0 0 12px}
+.sub{color:var(--muted);margin:0 0 36px;max-width:40em}
+h3{font-size:19px;letter-spacing:-0.02em;line-height:1.4;margin:0 0 6px}
+.subhead{margin:64px 0 16px}
+.subhead:first-of-type{margin-top:0}
+.subhead p{color:var(--muted);font-size:15px}
+.grid{display:grid;gap:14px}
+.g3{grid-template-columns:repeat(3,1fr)}
+.g2{grid-template-columns:repeat(2,1fr)}
+@media (max-width:820px){.g3{grid-template-columns:1fr}}
+@media (max-width:680px){.g2{grid-template-columns:1fr}}
+.card{background:var(--surface);border-radius:20px;padding:24px}
+.card p{color:var(--muted);font-size:15px}
+.card ul{margin:10px 0 0;padding-left:18px;font-size:15px;color:var(--muted)}
+.card ul li{margin:6px 0}
+
+/* brand */
+.kw .card h3{font-size:22px}
+.feature{background:var(--ink);color:var(--on-ink);border-radius:24px;padding:36px;display:grid;gap:28px;grid-template-columns:1.3fr 1fr;align-items:end;margin-top:14px}
+.feature p{opacity:.72;font-size:15px;margin-top:8px}
+.feature h3{font-size:24px}
+.feature .big{font-size:clamp(56px,9vw,88px);font-weight:800;letter-spacing:-0.05em;line-height:1}
+@media (max-width:720px){.feature{grid-template-columns:1fr;padding:28px}}
+.highlight{border:2px solid var(--accent);background:var(--bg)}
+.highlight h3{color:var(--accent)}
+.highlight p{color:var(--text)}
+.btn-row{margin-top:20px;display:flex;flex-wrap:wrap;align-items:center;gap:12px 16px}
+.btn{display:inline-flex;align-items:center;gap:8px;background:var(--accent);color:#fff;text-decoration:none;font-weight:600;font-size:16px;padding:14px 26px;border-radius:999px;transition:opacity .2s}
+.btn:hover{opacity:.85}
+.title-row{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px 24px;margin-bottom:12px}
+.title-row h2{margin:0}
+.title-btns{display:flex;flex-wrap:wrap;gap:10px}
+.btn.ghost{background:transparent;color:var(--accent);box-shadow:inset 0 0 0 2px var(--accent)}
+.btn.ghost:hover{background:var(--accent-soft);opacity:1}
+.nav-site{flex:none;font-size:13px;font-weight:600;text-decoration:none;color:#fff!important;background:var(--accent);padding:7px 14px;border-radius:999px;margin-left:6px;white-space:nowrap}
+@media (max-width:560px){.title-btns{width:100%}.title-btns .btn{flex:1;justify-content:center;padding:13px 16px;font-size:15px}}
+.btn-row span{font-size:14px;color:var(--muted)}
+@media (max-width:480px){.btn{width:100%;justify-content:center}}
+
+/* steps */
+.steps{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,1fr);gap:14px;counter-reset:s}
+.steps li{counter-increment:s;background:var(--surface);border-radius:20px;padding:24px;display:flex;flex-direction:column;gap:14px}
+.steps li::before{content:counter(s);width:36px;height:36px;border-radius:50%;background:var(--accent);color:#fff;display:grid;place-items:center;font-weight:700;flex:none}
+.steps p{color:var(--muted);font-size:15px}
+.steps .must{color:var(--warn-text);font-weight:700;margin-top:10px;background:var(--warn-bg);border-radius:12px;padding:10px 12px;font-size:14px}
+@media (max-width:960px){.steps{grid-template-columns:1fr 1fr}}
+@media (max-width:560px){.steps{grid-template-columns:1fr}.steps li{flex-direction:row;align-items:flex-start;padding:20px}}
+
+/* chips */
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:-12px 0 48px}
+.chips a{font-size:14px;text-decoration:none;color:var(--text);background:var(--surface);padding:8px 14px;border-radius:999px}
+.chips a:hover{background:var(--accent-soft);color:var(--accent)}
+
+/* content types */
+.types{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+@media (max-width:760px){.types{grid-template-columns:1fr}}
+.type{background:var(--surface);border-radius:20px;padding:26px;border-top:4px solid var(--accent);display:flex;flex-direction:column}
+.type.alt{border-top-color:var(--text)}
+.label{display:inline-block;align-self:flex-start;font-size:13px;font-weight:700;color:var(--accent);background:var(--accent-soft);border-radius:999px;padding:4px 12px;margin-bottom:12px}
+.type.alt .label{color:var(--text);background:var(--line)}
+.type p{color:var(--muted);font-size:15px}
+.flow{list-style:none;margin:20px 0 0;padding:16px 0 0;border-top:1px solid var(--line);counter-reset:f;display:grid;gap:10px}
+.flow li{counter-increment:f;display:flex;gap:12px;align-items:flex-start;font-size:15px;font-weight:600}
+.flow li::before{content:counter(f);flex:none;width:24px;height:24px;margin-top:1px;border-radius:50%;border:1.5px solid currentColor;display:grid;place-items:center;font-size:12px;opacity:.75}
+
+/* checklist */
+.check{list-style:none;margin:0;padding:0;background:var(--surface);border-radius:20px}
+.check li{display:flex;gap:14px;padding:18px 22px;border-bottom:1px solid var(--line);font-size:16px}
+.check li:last-child{border-bottom:0}
+.check li::before{content:"✓";color:var(--accent);font-weight:800;flex:none}
+.check li span{display:block;color:var(--muted);font-size:14px;margin-top:2px}
+.check.warn li::before{content:"!";width:20px;height:20px;margin-top:3px;border-radius:50%;background:var(--warn-text);color:var(--bg);display:grid;place-items:center;font-size:12px}
+
+/* notes */
+.note{background:var(--warn-bg);color:var(--warn-text);border-radius:18px;padding:18px 22px;margin-top:14px;font-size:15px}
+.note strong{display:block;margin-bottom:4px}
+.tip{background:var(--accent-soft);color:var(--text);border-radius:18px;padding:18px 22px;margin-top:14px;font-size:15px}
+.tip strong{display:block;margin-bottom:4px;color:var(--accent)}
+
+/* avoid expressions */
+.pairs{display:grid;gap:10px}
+.pair{display:grid;grid-template-columns:1fr 1fr;border-radius:18px;overflow:hidden}
+.pair > div{padding:16px 20px;font-size:15px}
+.pair .bad{background:var(--warn-bg);color:var(--warn-text)}
+.pair .bad p{text-decoration:line-through;margin-top:4px}
+.pair .good{background:var(--accent-soft)}
+.pair .good p{margin-top:4px}
+.pair small{font-size:12px;font-weight:700;letter-spacing:.02em}
+.pair .good small{color:var(--accent)}
+@media (max-width:620px){.pair{grid-template-columns:1fr}}
+
+/* formats */
+.formats .card{display:flex;flex-direction:column;gap:8px}
+.formats .ch{font-size:13px;font-weight:600;color:var(--accent)}
+.hook{display:inline-block;align-self:flex-start;font-size:12px;font-weight:700;color:var(--warn-text);background:var(--warn-bg);border-radius:999px;padding:3px 10px}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+.tag{background:var(--accent-soft);color:var(--accent);border-radius:999px;padding:6px 14px;font-size:15px;font-weight:600}
+
+/* do / don't */
+.dos{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+@media (max-width:680px){.dos{grid-template-columns:1fr}}
+.dos h3::before{content:"";display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:8px;vertical-align:middle}
+.dos .do h3::before{background:var(--accent)}
+.dos .dont h3::before{background:var(--warn-text)}
+
+/* faq */
+.faq{margin-top:8px}
+details{border-bottom:1px solid var(--line)}
+details:first-of-type{border-top:1px solid var(--line)}
+summary{list-style:none;cursor:pointer;padding:20px 40px 20px 0;font-weight:600;position:relative}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";position:absolute;right:4px;top:15px;font-size:24px;font-weight:400;color:var(--muted);transition:transform .2s}
+details[open] summary::after{transform:rotate(45deg)}
+details > div{padding:0 0 20px;color:var(--muted);font-size:15px;max-width:44em}
+
+footer{padding:112px 0 48px;color:var(--muted);font-size:14px}
+footer .wrap{border-top:1px solid var(--line);padding-top:24px;display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
+
+@media (max-width:560px){
+  body{font-size:16px}
+  .wrap{padding:0 18px}
+  .hero{padding-top:48px}
+  section.block{padding-top:72px}
+  .subhead{margin-top:48px}
+  .card,.type{padding:20px}
+  .check li{padding:16px 18px;font-size:15px}
+}
+
+/* language */
+html[data-lang="ja"] .lang-ko,html[data-lang="ko"] .lang-ja{display:none!important}
+.lang-ja{font-family:"Noto Sans JP","Hiragino Sans","Hiragino Kaku Gothic ProN","Yu Gothic",Meiryo,sans-serif;word-break:normal;line-break:strict}
+.lang-ja h1,.lang-ja h2{letter-spacing:-0.02em}
+.lang-switch{display:flex;flex:none;background:var(--surface);border-radius:999px;padding:3px;margin-left:6px}
+.lang-switch button{font:inherit;font-size:12px;font-weight:600;border:0;background:transparent;color:var(--muted);padding:5px 10px;border-radius:999px;cursor:pointer;white-space:nowrap}
+.lang-switch button[aria-pressed="true"]{background:var(--bg);color:var(--text);box-shadow:0 1px 3px rgba(0,0,0,.12)}
+@media (max-width:640px){.nav-site{display:none}}
+</style>
+</head>
+<body>
+
+<nav aria-label="Sections">
+  <div class="wrap">
+    <span class="brand">URBANSIDE</span>
+    <div class="links">
+      <a href="#ja-brand" data-sec="brand"><span class="lang-ja">ブランド</span><span class="lang-ko">브랜드</span></a>
+      <a href="#ja-visit" data-sec="visit"><span class="lang-ja">ご来場の流れ</span><span class="lang-ko">방문 안내</span></a>
+      <a href="#ja-content" data-sec="content"><span class="lang-ja">コンテンツガイド</span><span class="lang-ko">콘텐츠 가이드</span></a>
+      <a href="#ja-faq" data-sec="faq"><span class="lang-ja">注意事項・FAQ</span><span class="lang-ko">유의사항·FAQ</span></a>
+    </div>
+    <a class="nav-site" href="https://urbanside.jp/" target="_blank" rel="noopener"><span class="lang-ja">公式サイト ↗</span><span class="lang-ko">공식 사이트 ↗</span></a>
+    <div class="lang-switch" role="group" aria-label="Language">
+      <button type="button" data-set="ja" aria-pressed="true">日本語</button>
+      <button type="button" data-set="ko" aria-pressed="false">한국어</button>
+    </div>
+  </div>
+</nav>
+
+<div class="lang-ja" lang="ja">
+<header class="hero">
+  <div class="wrap">
+    <p class="kicker">26FW THE HYUNDAI 表参道ポップアップ クリエイターガイド</p>
+    <h1>THE HYUNDAI 表参道の<br>ポップアップへようこそ</h1>
+    <p class="lede">10日間だけオープンするURBANSIDE 26FWポップアップに足を運び、実際にコレクションを着て、クリエイターさんならではの視点で発信してください。ご来場から投稿までに必要な情報を、このページにすべてまとめました。</p>
+    <ul class="facts">
+      <li>期間<strong>2026.11.13 – 11.22</strong></li>
+      <li>場所<strong>THE HYUNDAI 表参道<br>3F SQUARE SPACE</strong><a class="map" href="https://maps.app.goo.gl/XkpmxTakmj2zdB3Z9" target="_blank" rel="noopener">Googleマップで見る ↗</a></li>
+      <li>営業時間<strong>毎日 11:00 – 20:00</strong></li>
+      <li>おすすめの来場時間<strong>オープン直後・平日午後</strong></li>
+    </ul>
+  </div>
+</header>
+
+<section class="block" id="ja-brand">
+  <div class="wrap">
+    <span class="eyebrow"><b>01</b>ブランド</span>
+    <div class="title-row">
+      <h2>URBANSIDEと26FWコレクション</h2>
+      <div class="title-btns">
+        <a class="btn deck-link" href="#product-deck">製品紹介資料を見る →</a>
+        <a class="btn ghost" href="https://urbanside.jp/" target="_blank" rel="noopener">公式サイト ↗</a>
+      </div>
+    </div>
+    <p class="sub">撮影の前に、URBANSIDEが伝えたいことをご紹介します。以下のキーワードを、クリエイターさんご自身の言葉で自由に表現してください。着用シーン別の体感温度の目安は、製品紹介資料でご確認いただけます。</p>
+
+    <div class="grid g3 kw">
+      <div class="card"><h3>Zero Limit</h3><p>都市とアウトドアの境界なく、どこでも着られる服。</p></div>
+      <div class="card"><h3>Zero Gravity</h3><p>軽いのに、しっかりと体を支える着心地。</p></div>
+      <div class="card"><h3>Zero Boundary</h3><p>寒さと日常の境界をなめらかに行き来するレイヤリング。</p></div>
+    </div>
+
+    <div class="feature">
+      <div>
+        <h3>Zero In</h3>
+        <p>3つのキーワードがひとつに集まるブランドコンセプトです。今回のポップアップ空間も、このコンセプトを軸につくられています。</p>
+      </div>
+      <div>
+        <div class="big">23</div>
+        <p>26FWコレクションは4カテゴリー・23アイテムで構成されています。代表素材の1000FPダウンを、ポップアップで実際に触って、着ていただけます。</p>
+      </div>
+    </div>
+
+    <div class="grid g2" style="margin-top:14px">
+      <div class="card highlight">
+        <h3>どの製品を着るか迷ったら</h3>
+        <p>メインラインナップの「エルロン 1000FPシリーズ」をメインに取り上げてください。</p>
+      </div>
+      <div class="card">
+        <h3>1000FPという素材について</h3>
+        <p>フィルパワー（FP）は、ダウンがどれだけふくらんで保温層をつくるかを示す数値です。数値が高いほど、同じ重さでもより暖かくなります。手で押してから離したときに、ふわっと元に戻る様子を撮っていただくと、素材の魅力がよく伝わります。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="block" id="ja-visit">
+  <div class="wrap">
+    <span class="eyebrow"><b>02</b>ご来場の流れ</span>
+    <h2>ご来場から精算まで</h2>
+    <p class="sub">クリエイターさんのご来場は事前予約制です。以下の流れで進めてください。</p>
+
+    <ol class="steps">
+      <li><div><h3>来場日程の確定</h3><p>事前にメールでやり取りし、来場日程を確定します。</p></div></li>
+      <li><div><h3>ポップアップ来場・撮影</h3><p>確定した時間に3F SQUARE SPACEへお越しください。現場担当者が空間と製品をご案内し、着用撮影もサポートします。</p></div></li>
+      <li><div><h3>コンテンツ投稿</h3><p>確定メールでご案内した期間内に投稿してください。</p><p class="must">すべてのコンテンツは、必ず担当者の事前確認を経てから投稿してください。</p></div></li>
+      <li><div><h3>リンク共有・精算</h3><p>投稿のリンクを担当者に共有してください。精算は投稿日の翌月末日（平日基準）にPayPalで行う予定です。</p></div></li>
+    </ol>
+  </div>
+</section>
+
+<section class="block" id="ja-content">
+  <div class="wrap">
+    <span class="eyebrow"><b>03</b>コンテンツガイド</span>
+    <h2>こんなふうに撮ってください</h2>
+    <p class="sub">私たちは、クリエイターさんならではのトーンを何より大切にしています。事前にご案内したコンテンツタイプに沿って流れをつくり、必須シーンと広告表記さえ守っていただければ、そのほかの構成は自由にしていただいて大丈夫です。</p>
+
+    <div class="chips" role="navigation" aria-label="コンテンツガイドの目次">
+      <a href="#ja-c-type">コンテンツタイプ</a>
+      <a href="#ja-c-scene">必須シーン</a>
+      <a href="#ja-c-avoid">避けたい表現</a>
+      <a href="#ja-c-shot">撮影ポイント</a>
+      <a href="#ja-c-format">形式別ガイド</a>
+      <a href="#ja-c-tag">必須表記</a>
+    </div>
+
+    <div class="subhead" id="ja-c-type">
+      <h3>コンテンツタイプ — あなたはどちら？</h3>
+      <p>事前にご案内したタイプに合わせて、以下のどちらかで進めます。</p>
+    </div>
+    <div class="types">
+      <div class="type">
+        <span class="label">ソウル発ブランド発見型</span>
+        <h3>韓国で話題のブランドが表参道にやってきた</h3>
+        <p>韓国で話題のソウル発ブランドURBANSIDEと、表参道で初めて出会う流れです。海外ブランドであることを新鮮で特別な魅力として伝えつつ、期間限定のポップアップでしか直接出会えない特別感を活かしてください。</p>
+        <ol class="flow">
+          <li>韓国で話題のソウル発ブランドURBANSIDEの紹介</li>
+          <li>期間限定・表参道ポップアップでの出会い</li>
+          <li>着用・フィット感とディテールの確認</li>
+          <li>自分に合う購入理由とポップアップ来場のご案内</li>
+        </ol>
+      </div>
+      <div class="type alt">
+        <span class="label">シーン訴求型</span>
+        <h3>実際に着る瞬間を見せる流れ</h3>
+        <p>実際の山行でのレイヤリングシステム、または日常での着用シーンなど、クリエイターさんが実際に着るシーンを中心に見せる流れです。山行か日常のどちらかを選んで進めてください。</p>
+        <ol class="flow">
+          <li>今日のシーン紹介（山行コース・天気、または一日の予定）</li>
+          <li>レイヤリング構成またはコーディネートの紹介</li>
+          <li>シーンの中での着用・動きや気温の変化に合わせた活用</li>
+          <li>ポップアップ来場のご案内</li>
+        </ol>
+      </div>
+    </div>
+    <div class="tip">
+      <strong>山行レイヤリングで進める場合</strong>
+      製品紹介資料の「着用シーン別の体感温度の目安」を参考に訴求してください。気温・コース・天気などの実際の条件もあわせて見せていただき、資料にない数値は断定しないでください。
+    </div>
+
+    <div class="subhead" id="ja-c-scene">
+      <h3>必ず入れてほしいシーン</h3>
+      <p>タイプに関係なく、すべてのコンテンツに必ず入れてください。</p>
+    </div>
+    <ul class="check">
+      <li><div>実際の着用シーンと動き<span>腕を上げる、ジッパーを開け閉めするなど、実際に着て使う様子が伝わる動作、パッカブルバッグで圧縮して収納するシーン</span></div></li>
+      <li><div>ご自身が紹介した購入基準につながる、具体的なディテール</div></li>
+      <li><div>正確な製品名<span>ブランド名・モデル名・カラー・サイズを混同しないように</span></div></li>
+      <li><div>ポップアップの来場情報<span>期間・場所・営業時間</span></div></li>
+    </ul>
+
+    <div class="subhead" id="ja-c-avoid">
+      <h3>避けたい表現</h3>
+      <p>実際に体験し、根拠となる資料がある内容だけを、担当者と合意した範囲内でお話しください。</p>
+    </div>
+    <div class="pairs">
+      <div class="pair">
+        <div class="bad"><small>避けてください</small><p>○○（他ブランド）級なのに、価格はずっと安い</p></div>
+        <div class="good"><small>こう言ってください</small><p>このスペックでこの価格なら、十分チェックする価値がありました。</p></div>
+      </div>
+      <div class="pair">
+        <div class="bad"><small>避けてください</small><p>○○（他ブランド）のデザインにも負けないクオリティ</p></div>
+        <div class="good"><small>こう言ってください</small><p>私が重視している肩の動かしやすさとポケットの構成が、この製品も満足できました。</p></div>
+      </div>
+      <div class="pair">
+        <div class="bad"><small>避けてください</small><p>1000FPだから、ほかのダウンより暖かい</p></div>
+        <div class="good"><small>こう言ってください</small><p>1000FPダウンを使った製品です。今日は店頭で着心地とフィット感を確かめてみました。</p></div>
+      </div>
+      <div class="pair">
+        <div class="bad"><small>避けてください</small><p>有名ブランドを買う必要はなさそう？</p></div>
+        <div class="good"><small>こう言ってください</small><p>いつも見ていたブランド以外に、気になる選択肢がひとつ増えました。</p></div>
+      </div>
+      <div class="pair">
+        <div class="bad"><small>避けてください</small><p>URBANSIDEの圧勝 ／ 性能は同じですね</p></div>
+        <div class="good"><small>こう言ってください</small><p>私の選ぶ基準では、この部分が購入の決め手になりました。</p></div>
+      </div>
+    </div>
+    <ul class="check warn" style="margin-top:14px">
+      <li><div>実際にしていない来場・体験を、したかのように演出しない</div></li>
+      <li><div>他ブランドを下げたり、からかうようなニュアンスを使わない</div></li>
+      <li><div>短時間の着用だけで、保温性・耐久性を断定しない</div></li>
+      <li><div>タイトル・サムネイル・字幕にも、上記の表現が入っていないか確認する</div></li>
+    </ul>
+
+    <div class="subhead" id="ja-c-shot">
+      <h3>おすすめの撮影ポイント</h3>
+      <p>着用 → 空間 → ディテールの順で撮っていただくのがおすすめです。</p>
+    </div>
+    <div class="grid g3">
+      <div class="card"><h3>① 着用</h3><p>代表アイテム（エルロン 1000FPシリーズ）を実際に着て動くシーン。シルエットとレイヤリングが見えるよう、全身を必ず一度入れてください。</p></div>
+      <div class="card"><h3>② 空間</h3><p>ポップアップの入口と空間全体が見えるワイドカット。表参道の街の雰囲気も一緒に入ると、さらに素敵です。</p></div>
+      <div class="card"><h3>③ ディテール</h3><p>素材を押して離すシーン、ジッパーやポケットなどのクローズアップ。1000FPダウンがふわっと元に戻るカットがおすすめです。</p></div>
+    </div>
+
+    <div class="subhead" id="ja-c-format">
+      <h3>形式別ガイド</h3>
+      <p>ご担当の形式に合わせてご確認ください。</p>
+    </div>
+    <div class="grid g3 formats">
+      <div class="card">
+        <span class="ch">Instagram フィード・カルーセル</span>
+        <h3>Instagram投稿</h3>
+        <p>着用 → 空間 → ディテールの順で、複数枚で構成してください。最後の1枚かキャプションで、ポップアップの期間・場所をご案内ください。</p>
+      </div>
+      <div class="card">
+        <span class="ch">Instagram リール・TikTok・YouTube ショート</span>
+        <h3>ショート動画</h3>
+        <span class="hook">冒頭フック必須</span>
+        <p>フックになる一言やシーンから始め、選んだコンテンツタイプの流れを短くまとめてください。</p>
+      </div>
+      <div class="card">
+        <span class="ch">YouTube 本編</span>
+        <h3>ロング動画</h3>
+        <span class="hook">冒頭フック必須</span>
+        <p>フックになる一言やシーンから始め、選んだコンテンツタイプの1〜4の流れをそのまま構成し、着用・ディテールのパートをたっぷり入れてください。</p>
+      </div>
+    </div>
+    <div class="tip">
+      <strong>冒頭フックの例（ショート・ロング動画）</strong>
+      「このスペックでこの価格？」のように気になる一言、または「1000FP」など数字を前面に出した一言から始めてください。
+    </div>
+
+    <div class="subhead" id="ja-c-tag">
+      <h3>必須表記</h3>
+      <p>すべての投稿に、以下の内容を漏れなく入れてください。</p>
+    </div>
+    <div class="grid g2">
+      <div class="card">
+        <h3>必須ハッシュタグ</h3>
+        <div class="tags"><span class="tag">#PR</span><span class="tag">#URBANSIDE</span></div>
+      </div>
+      <div class="card">
+        <h3>必須アカウントタグ・位置情報</h3>
+        <ul>
+          <li>URBANSIDE公式アカウントのタグ付け（@URBANSIDE.JP）</li>
+          <li>位置情報：THE HYUNDAI 表参道</li>
+        </ul>
+      </div>
+    </div>
+    <div class="note">
+      <strong>広告表記は必ず守ってください</strong>
+      日本では2023年10月から、景品表示法に基づくステルスマーケティング規制が施行されています。ブランドから製品や費用の提供を受けた投稿は、広告であることを明確に示す必要があります。キャプションの1行目または動画内に「#PR」「広告」などの表記を見やすく入れ、各プラットフォームのタイアップ投稿（ブランドコンテンツ）機能もあわせてご利用ください。
+    </div>
+  </div>
+</section>
+
+<section class="block" id="ja-faq">
+  <div class="wrap">
+    <span class="eyebrow"><b>04</b>注意事項・FAQ</span>
+    <h2>撮影前に必ずご確認ください</h2>
+    <p class="sub">ポップアップは、他ブランドの店舗やほかのお客様もいらっしゃる空間です。撮影時の注意事項と、よくあるご質問をまとめました。</p>
+
+    <div class="subhead">
+      <h3>撮影時の注意事項</h3>
+    </div>
+    <ul class="check">
+      <li><div>撮影は、事前に合意した場所の範囲内でのみ行ってください<span>ポップアップ以外の場所で撮影が必要な場合は、事前にご相談ください</span></div></li>
+      <li><div>他ブランドの店舗内や、他店舗のスタッフが接客しているシーンは、別途合意なしに撮影しないでください</div></li>
+      <li><div>ほかのお客様やスタッフの顔・名札・会話が映り込まないよう、構図にご配慮ください<span>映り込んだ場合は、事前確認の際にあわせてお知らせください</span></div></li>
+      <li><div>他ブランドのロゴを過度に強調したり、コラボレーションのように見える使い方はしないでください</div></li>
+    </ul>
+
+    <div class="dos" style="margin-top:14px">
+      <div class="card do">
+        <h3>お願いしたいこと</h3>
+        <ul>
+          <li>来場時間の10分前にお越しいただき、現場担当者にお名前をお伝えください</li>
+          <li>投稿後、投稿リンクとインサイトのスクリーンショットを共有してください</li>
+          <li>製品名・素材情報は、ガイドの表記どおりにお書きください</li>
+        </ul>
+      </div>
+      <div class="card dont">
+        <h3>避けてほしいこと</h3>
+        <ul>
+          <li>広告表記なしで投稿すること</li>
+          <li>担当者の事前確認を経ずに投稿すること</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="subhead">
+      <h3>よくあるご質問</h3>
+    </div>
+    <div class="faq">
+      <details>
+        <summary>来場日を変更できますか？</summary>
+        <div>事前に担当者までご連絡いただければ、残りの日程の中で変更をお手伝いします。来場枠が限られているため、当日の変更は難しい点をご了承ください。</div>
+      </details>
+      <details>
+        <summary>投稿前に確認を受ける必要がありますか？</summary>
+        <div>はい、すべてのコンテンツは投稿前に担当者の事前確認が必要です。製品情報と広告表記を中心に確認し、クリエイターさんのトーンや構成はできる限り尊重します。</div>
+      </details>
+      <details>
+        <summary>ポップアップに来場できない場合はどうなりますか？</summary>
+        <div>製品をお送りして撮影していただくフィールドレビュー形式に切り替えて、ご参加いただけます。お気軽に担当者までお問い合わせください。</div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>URBANSIDE 26FW クリエイターコラボ · <a href="https://urbanside.jp/" target="_blank" rel="noopener">urbanside.jp</a></span>
+    <span>お問い合わせ <a href="mailto:contact@milimeal.com">contact@milimeal.com</a></span>
+  </div>
+</footer>
+
+</div>
+
+<div class="lang-ko" lang="ko">
+<header class="hero">
+  <div class="wrap">
+    <p class="kicker">26FW 더현대 오모테산도 팝업 크리에이터 가이드</p>
+    <h1>오모테산도 더현대 팝업에<br>초대합니다</h1>
+    <p class="lede">열흘 동안만 열리는 URBANSIDE 26FW 팝업에 직접 방문해 컬렉션을 입어보고, 크리에이터님의 시선으로 기록해주세요. 방문부터 업로드까지 필요한 내용을 이 페이지에 모두 담았어요.</p>
+    <ul class="facts">
+      <li>기간<strong>2026.11.13 – 11.22</strong></li>
+      <li>장소<strong>더현대 오모테산도<br>3층 SQUARE SPACE</strong><a class="map" href="https://maps.app.goo.gl/XkpmxTakmj2zdB3Z9" target="_blank" rel="noopener">구글 지도에서 보기 ↗</a></li>
+      <li>영업시간<strong>매일 11:00 – 20:00</strong></li>
+      <li>추천 방문 시간<strong>오픈 직후 · 평일 오후</strong></li>
+    </ul>
+  </div>
+</header>
+
+<!-- 01 BRAND -->
+<section class="block" id="ko-brand">
+  <div class="wrap">
+    <span class="eyebrow"><b>01</b>브랜드</span>
+    <div class="title-row">
+      <h2>URBANSIDE와 26FW 컬렉션</h2>
+      <div class="title-btns">
+        <a class="btn deck-link" href="#product-deck">제품 소개서 보기 →</a>
+        <a class="btn ghost" href="https://urbanside.jp/" target="_blank" rel="noopener">공식 사이트 ↗</a>
+      </div>
+    </div>
+    <p class="sub">촬영 전에 URBANSIDE가 어떤 이야기를 하고 있는지 먼저 소개해드릴게요. 아래 키워드를 크리에이터님만의 언어로 자유롭게 풀어주세요. 착용 상황별 체감 온도 기준은 제품 소개서에서 확인할 수 있어요.</p>
+
+    <div class="grid g3 kw">
+      <div class="card"><h3>Zero Limit</h3><p>도시와 아웃도어의 경계 없이, 어디서든 입을 수 있는 옷.</p></div>
+      <div class="card"><h3>Zero Gravity</h3><p>가볍지만 단단하게 몸을 지지하는 착용감.</p></div>
+      <div class="card"><h3>Zero Boundary</h3><p>추위와 일상의 경계를 매끄럽게 넘나드는 레이어링.</p></div>
+    </div>
+
+    <div class="feature">
+      <div>
+        <h3>Zero In</h3>
+        <p>세 가지 키워드가 하나로 모이는 브랜드 콘셉트예요. 이번 팝업 공간도 이 콘셉트를 중심으로 꾸며져 있어요.</p>
+      </div>
+      <div>
+        <div class="big">23</div>
+        <p>26FW 컬렉션은 4개 카테고리, 23개 아이템으로 구성돼요. 대표 소재인 1000FP 다운을 팝업에서 직접 만져보고 입어보실 수 있어요.</p>
+      </div>
+    </div>
+
+    <div class="grid g2" style="margin-top:14px">
+      <div class="card highlight">
+        <h3>어떤 제품을 입어야 할지 고민된다면</h3>
+        <p>메인 라인업인 에일러론 1000FP 시리즈를 메인으로 담아주세요.</p>
+      </div>
+      <div class="card">
+        <h3>1000FP 소재 이야기</h3>
+        <p>필파워(FP)는 다운이 얼마나 부풀어 보온층을 만드는지를 나타내는 수치예요. 숫자가 높을수록 같은 무게로 더 따뜻해요. 손으로 눌렀다 놓았을 때 다시 부풀어 오르는 모습을 담아주시면 소재의 매력이 잘 전달돼요.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 02 VISIT -->
+<section class="block" id="ko-visit">
+  <div class="wrap">
+    <span class="eyebrow"><b>02</b>방문 안내</span>
+    <h2>방문부터 정산까지</h2>
+    <p class="sub">크리에이터님의 방문은 사전 예약제로 진행돼요. 아래 순서대로 함께해주세요.</p>
+
+    <ol class="steps">
+      <li><div><h3>방문 일정 확정</h3><p>사전에 이메일로 소통하며 방문 일정을 확정해요.</p></div></li>
+      <li><div><h3>팝업 방문·촬영</h3><p>확정된 시간에 맞춰 3층 SQUARE SPACE로 와주세요. 현장 담당자가 공간과 제품을 안내해드리고, 착용 촬영도 도와드려요.</p></div></li>
+      <li><div><h3>콘텐츠 업로드</h3><p>확정 메일에 안내된 기간 안에 업로드해주세요.</p><p class="must">모든 콘텐츠는 반드시 담당자의 사전 검토를 거친 뒤에 업로드할 수 있어요.</p></div></li>
+      <li><div><h3>링크 공유·정산</h3><p>업로드한 게시물 링크를 담당자에게 공유해주세요. 정산은 업로드일 기준 익월 말일(평일 기준)에 PayPal로 진행될 예정이에요.</p></div></li>
+    </ol>
+  </div>
+</section>
+
+<!-- 03 CONTENT -->
+<section class="block" id="ko-content">
+  <div class="wrap">
+    <span class="eyebrow"><b>03</b>콘텐츠 가이드</span>
+    <h2>이렇게 담아주세요</h2>
+    <p class="sub">저희는 크리에이터님만의 톤을 가장 중요하게 생각해요. 사전에 안내드린 콘텐츠 유형에 맞춰 흐름을 잡고, 필수 장면과 광고 표기만 지켜주시면 나머지 구성은 자유롭게 해주셔도 좋아요.</p>
+
+    <div class="chips" role="navigation" aria-label="콘텐츠 가이드 바로가기">
+      <a href="#ko-c-type">콘텐츠 유형</a>
+      <a href="#ko-c-scene">필수 장면</a>
+      <a href="#ko-c-avoid">피해야 할 표현</a>
+      <a href="#ko-c-shot">촬영 포인트</a>
+      <a href="#ko-c-format">형식별 가이드</a>
+      <a href="#ko-c-tag">필수 표기</a>
+    </div>
+
+    <div class="subhead" id="ko-c-type">
+      <h3>콘텐츠 유형 — 나는 어떤 쪽인가요</h3>
+      <p>사전에 안내드린 유형에 따라 아래 둘 중 하나로 진행해요.</p>
+    </div>
+    <div class="types">
+      <div class="type">
+        <span class="label">서울에서 온 브랜드 발견형</span>
+        <h3>한국에서 입소문 난 브랜드가 오모테산도에 왔다</h3>
+        <p>한국에서 입소문 난 서울 브랜드 URBANSIDE를 오모테산도에서 처음 만나는 흐름이에요. 외국 브랜드라는 점을 새롭고 특별한 매력으로 보여주시고, 기간 한정 팝업에서만 직접 만나볼 수 있다는 희소성을 살려주세요.</p>
+        <ol class="flow">
+          <li>한국에서 입소문 난 서울 브랜드 URBANSIDE 소개</li>
+          <li>기간 한정 오모테산도 팝업에서의 첫 만남</li>
+          <li>착용 · 핏과 디테일 확인</li>
+          <li>나에게 맞는 구매 이유와 팝업 방문 안내</li>
+        </ol>
+      </div>
+      <div class="type alt">
+        <span class="label">상황소구형</span>
+        <h3>실제로 입는 순간을 보여주는 흐름</h3>
+        <p>실제 산행에서의 레이어링 시스템, 또는 일상 속 착용 장면처럼 크리에이터님이 실제로 입는 상황을 중심으로 보여주는 흐름이에요. 산행과 일상 중 하나를 골라 진행해주세요.</p>
+        <ol class="flow">
+          <li>오늘의 상황 소개 (산행 코스·날씨 또는 하루 일정)</li>
+          <li>레이어링 구성 또는 코디 소개</li>
+          <li>상황 속 착용 · 움직임과 온도 변화에 따른 활용</li>
+          <li>팝업 방문 안내</li>
+        </ol>
+      </div>
+    </div>
+    <div class="tip">
+      <strong>산행 레이어링으로 진행하신다면</strong>
+      제품 소개서의 착용 상황별 체감 온도 기준을 참고해서 소구해주세요. 기온, 코스, 날씨 같은 실제 조건도 함께 보여주시고, 소개서에 없는 수치는 단정하지 말아주세요.
+    </div>
+
+    <div class="subhead" id="ko-c-scene">
+      <h3>필수로 담아야 할 장면</h3>
+      <p>유형과 상관없이 모든 콘텐츠에 꼭 들어가야 해요.</p>
+    </div>
+    <ul class="check">
+      <li><div>실제 착용 장면과 움직임<span>팔 들기, 지퍼 여닫기 등 실제로 입고 쓰는 모습이 드러나는 동작, 패커블 백을 사용해 압축한 장면</span></div></li>
+      <li><div>본인이 소개한 구매 기준과 연결되는 구체적인 디테일</div></li>
+      <li><div>정확한 제품명<span>브랜드, 모델명, 컬러·사이즈를 헷갈리지 않게</span></div></li>
+      <li><div>팝업 방문 정보<span>기간, 위치, 영업시간</span></div></li>
+    </ul>
+
+    <div class="subhead" id="ko-c-avoid">
+      <h3>피해야 할 표현</h3>
+      <p>실제로 체험했고 근거 자료가 있는 내용만, 담당자와 협의한 범위 안에서 말해주세요.</p>
+    </div>
+    <div class="pairs">
+      <div class="pair">
+        <div class="bad"><small>피해주세요</small><p>○○(다른 브랜드)급인데 가격은 훨씬 싸다</p></div>
+        <div class="good"><small>이렇게 말해주세요</small><p>이 정도 스펙에 이 가격이라 충분히 눈여겨볼 만했어요.</p></div>
+      </div>
+      <div class="pair">
+        <div class="bad"><small>피해주세요</small><p>○○(다른 브랜드) 디자인 못지않은 퀄리티</p></div>
+        <div class="good"><small>이렇게 말해주세요</small><p>제가 중요하게 보는 어깨 움직임과 포켓 구성이 이 제품도 만족스러웠어요.</p></div>
+      </div>
+      <div class="pair">
+        <div class="bad"><small>피해주세요</small><p>1000FP라 다른 패딩보다 더 따뜻하다</p></div>
+        <div class="good"><small>이렇게 말해주세요</small><p>1000FP 다운을 사용한 제품이에요. 오늘은 매장에서 착용감과 핏을 확인해봤어요.</p></div>
+      </div>
+      <div class="pair">
+        <div class="bad"><small>피해주세요</small><p>유명 브랜드 살 필요 없겠는데?</p></div>
+        <div class="good"><small>이렇게 말해주세요</small><p>원래 보던 브랜드 외에 눈여겨볼 선택지가 하나 더 생겼어요.</p></div>
+      </div>
+      <div class="pair">
+        <div class="bad"><small>피해주세요</small><p>URBANSIDE 압승 / 성능 똑같네요</p></div>
+        <div class="good"><small>이렇게 말해주세요</small><p>제 선택 기준에서는 이 부분이 구매 이유가 됐어요.</p></div>
+      </div>
+    </div>
+    <ul class="check warn" style="margin-top:14px">
+      <li><div>실제로 해보지 않은 방문·체험을 한 것처럼 연출하지 않기</div></li>
+      <li><div>다른 브랜드를 낮추거나 조롱하는 뉘앙스 쓰지 않기</div></li>
+      <li><div>짧은 착용 경험만으로 보온성·내구성을 단정하지 않기</div></li>
+      <li><div>제목·썸네일·자막에도 위 표현이 들어가지 않았는지 확인하기</div></li>
+    </ul>
+
+    <div class="subhead" id="ko-c-shot">
+      <h3>추천 촬영 포인트</h3>
+      <p>착용 → 공간 → 디테일 순서로 담아주시면 좋아요.</p>
+    </div>
+    <div class="grid g3">
+      <div class="card"><h3>① 착용</h3><p>대표 아이템(에일러론 1000FP 시리즈)을 직접 입고 움직이는 장면. 실루엣과 레이어링이 보이도록 전신을 꼭 한 번 담아주세요.</p></div>
+      <div class="card"><h3>② 공간</h3><p>팝업 입구와 전체 공간을 보여주는 와이드 컷. 오모테산도 거리 분위기가 함께 담기면 더 좋아요.</p></div>
+      <div class="card"><h3>③ 디테일</h3><p>소재를 눌렀다 놓는 장면, 지퍼·포켓 등 클로즈업. 1000FP 다운이 다시 부풀어 오르는 컷을 추천해요.</p></div>
+    </div>
+
+    <div class="subhead" id="ko-c-format">
+      <h3>형식별 가이드</h3>
+      <p>진행하시는 형식에 맞춰 확인해주세요.</p>
+    </div>
+    <div class="grid g3 formats">
+      <div class="card">
+        <span class="ch">Instagram 피드·캐러셀</span>
+        <h3>인스타그램 게시물</h3>
+        <p>착용 → 공간 → 디테일 순서로 여러 장 구성해주세요. 마지막 장이나 캡션에 팝업 기간·위치를 안내해주세요.</p>
+      </div>
+      <div class="card">
+        <span class="ch">Instagram 릴스 · TikTok · YouTube 쇼츠</span>
+        <h3>숏폼</h3>
+        <span class="hook">첫컷 후킹 필수</span>
+        <p>후킹 멘트나 장면으로 시작한 뒤, 선택한 콘텐츠 유형의 흐름을 짧게 압축해주세요.</p>
+      </div>
+      <div class="card">
+        <span class="ch">YouTube 본편</span>
+        <h3>롱폼</h3>
+        <span class="hook">첫컷 후킹 필수</span>
+        <p>후킹 멘트나 장면으로 시작한 뒤, 선택한 콘텐츠 유형의 1–4단계 흐름을 그대로 구성하고 착용·디테일 구간을 넉넉하게 담아주세요.</p>
+      </div>
+    </div>
+    <div class="tip">
+      <strong>첫컷 후킹 예시 (숏폼·롱폼)</strong>
+      「이 스펙에 이 가격?」처럼 궁금증을 만드는 멘트, 또는 「1000FP」 같은 숫자를 앞세운 멘트로 시작해주세요.
+    </div>
+
+    <div class="subhead" id="ko-c-tag">
+      <h3>필수 표기</h3>
+      <p>모든 게시물에 아래 내용을 빠짐없이 넣어주세요.</p>
+    </div>
+    <div class="grid g2">
+      <div class="card">
+        <h3>필수 해시태그</h3>
+        <div class="tags"><span class="tag">#PR</span><span class="tag">#URBANSIDE</span></div>
+      </div>
+      <div class="card">
+        <h3>필수 계정 태그·위치</h3>
+        <ul>
+          <li>URBANSIDE 공식 계정 태그 (@URBANSIDE.JP)</li>
+          <li>위치 태그: 더현대 오모테산도</li>
+        </ul>
+      </div>
+    </div>
+    <div class="note">
+      <strong>광고 표기는 꼭 지켜주세요</strong>
+      일본에서는 2023년 10월부터 스텔스 마케팅 규제가 시행되고 있어요. 브랜드로부터 제품이나 비용을 제공받은 게시물은 광고임을 분명히 밝혀야 해요. 캡션 첫 줄이나 영상 화면에 「#PR」「広告」 표기를 잘 보이게 넣어주시고, 플랫폼의 유료 파트너십 기능도 함께 켜주세요.
+    </div>
+  </div>
+</section>
+
+<!-- 04 FAQ -->
+<section class="block" id="ko-faq">
+  <div class="wrap">
+    <span class="eyebrow"><b>04</b>유의사항·FAQ</span>
+    <h2>촬영 전에 꼭 확인해주세요</h2>
+    <p class="sub">팝업은 다른 브랜드 매장과 방문객이 함께 있는 공간이에요. 촬영 시 유의사항과 자주 받는 질문을 모았어요.</p>
+
+    <div class="subhead">
+      <h3>촬영 시 유의사항</h3>
+    </div>
+    <ul class="check">
+      <li><div>촬영은 사전에 협의된 장소 안에서만 진행해주세요<span>팝업 외 공간에서 촬영이 필요하면 미리 상의해주세요</span></div></li>
+      <li><div>다른 브랜드 매장 내부나 다른 매장 직원이 응대하는 장면은 별도 협의 없이 촬영하지 말아주세요</div></li>
+      <li><div>다른 방문객과 직원의 얼굴·이름표·대화가 담기지 않도록 구도에 신경 써주세요<span>담겼다면 사전 검토 때 함께 알려주세요</span></div></li>
+      <li><div>다른 브랜드 로고를 과하게 강조하거나 협업처럼 보이게 사용하지 말아주세요</div></li>
+    </ul>
+
+    <div class="dos" style="margin-top:14px">
+      <div class="card do">
+        <h3>이렇게 해주세요</h3>
+        <ul>
+          <li>방문 시간 10분 전에 도착해서 현장 담당자에게 성함을 알려주세요</li>
+          <li>업로드 후 게시물 링크와 인사이트 캡처를 공유해주세요</li>
+          <li>제품명과 소재 정보는 가이드에 적힌 그대로 써주세요</li>
+        </ul>
+      </div>
+      <div class="card dont">
+        <h3>이것은 피해주세요</h3>
+        <ul>
+          <li>광고 표기 없이 업로드하기</li>
+          <li>담당자의 사전 검토 전에 업로드하기</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="subhead">
+      <h3>자주 묻는 질문</h3>
+    </div>
+    <div class="faq">
+      <details>
+        <summary>방문 날짜를 변경할 수 있나요?</summary>
+        <div>미리 담당자에게 연락주시면 남은 일정 안에서 변경을 도와드릴게요. 방문 시간이 한정되어 있어 당일 변경은 어려운 점 양해 부탁드려요.</div>
+      </details>
+      <details>
+        <summary>업로드 전에 초안 확인을 받아야 하나요?</summary>
+        <div>네, 모든 콘텐츠는 업로드 전에 담당자의 사전 검토를 꼭 거쳐야 해요. 제품 정보와 광고 표기 위주로 확인하고, 크리에이터님의 톤과 구성은 최대한 존중할게요.</div>
+      </details>
+      <details>
+        <summary>팝업을 방문하지 못하면 어떻게 되나요?</summary>
+        <div>제품을 배송받아 촬영하는 필드 리뷰 형식으로 바꿔서 참여하실 수 있어요. 담당자에게 편하게 문의해주세요.</div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>URBANSIDE 26FW 크리에이터 협업 · <a href="https://urbanside.jp/" target="_blank" rel="noopener">urbanside.jp</a></span>
+    <span>문의 <a href="mailto:contact@milimeal.com">contact@milimeal.com</a></span>
+  </div>
+</footer>
+</div>
+
+<script>
+(function(){
+  var root=document.documentElement;
+  var links=[].slice.call(document.querySelectorAll('nav .links a'));
+  var btns=[].slice.call(document.querySelectorAll('.lang-switch button'));
+  var titles={ja:'26FW THE HYUNDAI 表参道ポップアップ クリエイターガイド',ko:'26FW 더현대 오모테산도 팝업 크리에이터 가이드'};
+  function setLang(l,save){
+    if(l!=='ja'&&l!=='ko') l='ja';
+    root.setAttribute('data-lang',l); root.setAttribute('lang',l);
+    document.title=titles[l];
+    btns.forEach(function(b){b.setAttribute('aria-pressed',b.dataset.set===l?'true':'false');});
+    links.forEach(function(a){a.setAttribute('href','#'+l+'-'+a.dataset.sec);});
+    if(save){try{localStorage.setItem('us-guide-lang',l);}catch(e){}}
+  }
+  var init='ja';
+  var q=(location.search.match(/[?&]lang=(ja|ko)/)||[])[1];
+  if(q) init=q; else { try{var v=localStorage.getItem('us-guide-lang'); if(v) init=v;}catch(e){} }
+  setLang(init,false);
+  btns.forEach(function(b){b.addEventListener('click',function(){
+    setLang(b.dataset.set,true); window.scrollTo(0,0);
+  });});
+  if(!('IntersectionObserver' in window)) return;
+  var io=new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(!e.isIntersecting) return;
+      var sec=e.target.id.replace(/^(ja|ko)-/,'');
+      links.forEach(function(a){
+        var on=a.dataset.sec===sec; a.classList.toggle('on',on);
+        if(on){var c=a.parentNode; c.scrollLeft=a.offsetLeft-c.clientWidth/2+a.clientWidth/2;}
+      });
+    });
+  },{rootMargin:'-45% 0px -50% 0px'});
+  ['ja','ko'].forEach(function(l){['brand','visit','content','faq'].forEach(function(s){var el=document.getElementById(l+'-'+s); if(el) io.observe(el);});});
+})();
+</script>
+</body>
+</html>
