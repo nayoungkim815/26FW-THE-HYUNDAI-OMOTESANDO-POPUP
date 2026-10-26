@@ -211,6 +211,25 @@ footer .wrap{border-top:1px solid var(--line);padding-top:24px;display:flex;flex
 .gallery figcaption{padding:14px 18px;font-size:14px;color:var(--muted)}
 .gallery figcaption b{display:block;color:var(--text);font-size:15px;margin-bottom:2px}
 @media (max-width:760px){.gallery{grid-template-columns:1fr}}
+.thumbs{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+@media (max-width:760px){.thumbs{grid-template-columns:1fr}}
+.thumb{background:var(--surface);border-radius:20px;padding:24px;display:flex;flex-direction:column;gap:14px}
+.thumb > p{color:var(--muted);font-size:15px}
+.stage{display:flex;justify-content:center;align-items:center;background:var(--bg);border-radius:14px;padding:20px;min-height:260px}
+.f916{position:relative;width:150px;aspect-ratio:9/16;border-radius:12px;background:linear-gradient(160deg,#3a3f47,#15171b);display:flex;align-items:center;justify-content:center}
+.f916 .safe{position:absolute;left:0;right:0;top:12.5%;bottom:12.5%;border:2px dashed #7cc0ff;border-radius:4px;display:flex;align-items:center;justify-content:center}
+.f916 .tag{position:absolute;top:4px;right:6px;font-size:10px;color:#7cc0ff;font-weight:700}
+.f916 .ratio,.f169 .ratio{position:absolute;bottom:6px;left:8px;font-size:10px;color:rgba(255,255,255,.6);font-weight:700}
+.sample{color:#fff;font-weight:800;font-size:15px;line-height:1.25;text-align:center;padding:0 8px;text-shadow:0 1px 6px rgba(0,0,0,.5)}
+.f169{position:relative;width:100%;max-width:340px;aspect-ratio:16/9;border-radius:12px;background:linear-gradient(120deg,#2b3a4a,#111418);display:flex;align-items:center;padding-left:18px}
+.f169 .sample{text-align:left;font-size:20px;padding:0}
+.f169 .sample small{display:block;font-size:12px;font-weight:700;opacity:.85}
+.f169 .ng{position:absolute;right:8px;bottom:8px;width:30%;height:28%;border:2px dashed #ff8a80;border-radius:6px;display:flex;flex-direction:column;align-items:flex-end;justify-content:flex-end;padding:4px}
+.f169 .ng span{font-size:10px;color:#ff8a80;font-weight:700;position:absolute;top:3px;left:6px}
+.f169 .ng b{background:rgba(0,0,0,.8);color:#fff;font-size:10px;padding:1px 4px;border-radius:3px}
+.mini h4{font-size:14px;margin:0 0 6px;color:var(--text)}
+.mini ul{margin:0;padding-left:18px;font-size:14px;color:var(--muted)}
+.mini ul li{margin:3px 0}
 /* language */
 html[data-lang="ja"] .lang-ko,html[data-lang="ko"] .lang-ja{display:none!important}
 .lang-ja{font-family:"Noto Sans JP","Hiragino Sans","Hiragino Kaku Gothic ProN","Yu Gothic",Meiryo,sans-serif;word-break:normal;line-break:strict}
@@ -334,6 +353,7 @@ html[data-lang="ja"] .lang-ko,html[data-lang="ko"] .lang-ja{display:none!importa
       <a href="#ja-c-avoid">避けたい表現</a>
       <a href="#ja-c-shot">撮影ポイント</a>
       <a href="#ja-c-format">形式別ガイド</a>
+      <a href="#ja-c-thumb">サムネイル</a>
       <a href="#ja-c-tag">必須表記</a>
     </div>
 
@@ -451,6 +471,33 @@ html[data-lang="ja"] .lang-ko,html[data-lang="ko"] .lang-ja{display:none!importa
       <strong>冒頭フックの例（ショート・ロング動画）</strong>
       「このスペックでこの価格？」のように気になる一言、または「1000FP」など数字を前面に出した一言から始めてください。
     </div>
+
+    <div class="subhead" id="ja-c-thumb">
+      <h3>サムネイルガイド</h3>
+      <p>ショート動画のカバーとロング動画のサムネイルは、事前確認の際に動画とあわせてお送りください。</p>
+    </div>
+    <div class="thumbs">
+      <div class="thumb">
+        <span class="label">ショート動画</span>
+        <h3 style="margin:0">カバー 9:16 ／ グリッド 3:4</h3>
+        <p>カバーは9:16で作成しますが、プロフィールのグリッドでは中央の3:4だけが表示されます。商品とテキストは点線の内側に収めてください。</p>
+        <div class="stage" aria-hidden="true"><div class="f916"><div class="safe"><span class="tag">3:4</span><span class="sample">表参道で<br>発見</span></div><span class="ratio">9:16</span></div></div>
+        <div class="mini"><h4>構図</h4><ul><li>エルロン 1000FPシリーズを着た上半身、または全身のカット</li><li>ポップアップ空間や雪山のバックドロップを背景にすると、ポップアップのコンテンツだとすぐ伝わります</li><li>明るくシンプルな背景で、ブレのないフレーム</li></ul></div>
+        <div class="mini"><h4>テキスト</h4><ul><li>ひと目で伝わる短い一言（10文字前後）</li><li>例：「表参道で発見」「想像以上に軽い」</li><li>大きく太めの文字で、商品にかからない位置に</li></ul></div>
+      </div>
+      <div class="thumb">
+        <span class="label">ロング動画</span>
+        <h3 style="margin:0">16:9 ／ 1280×720推奨</h3>
+        <p>右下には動画の長さが表示されるため、テキストや商品は置かないでください。</p>
+        <div class="stage" aria-hidden="true"><div class="f169"><span class="sample">1000FP!!<small>表参道に10日間だけ</small></span><div class="ng"><span>テキストNG</span><b>12:34</b></div><span class="ratio">16:9</span></div></div>
+        <div class="mini"><h4>構図</h4><ul><li>人物や商品は画面の1/3以上の大きさで、アウターがはっきり見えるように</li><li>アウターの色が背景と対比になる構図</li><li>ポップアップ空間が一緒に映ると、さらに効果的です</li></ul></div>
+        <div class="mini"><h4>テキスト</h4><ul><li>思わずクリックしたくなる、フックのある一言を大きくすっきりと</li><li>例：「1000FP!! この価格なら買わない理由なし」「表参道に10日間だけ」</li><li>商品にかからない余白に配置</li></ul></div>
+      </div>
+    </div>
+    <div class="mini" style="margin:20px 0 8px"><h4>避けること（共通）</h4></div>
+    <ul class="check warn">
+      <li><div>顔のアップだけで、商品が見えないカット</div></li><li><div>逆光・ブレ・暗さで、顔や商品が見えにくいカット</div></li><li><div>文字が小さい、または情報を詰め込みすぎて読みにくいテキスト</div></li><li><div>案内されていない価格・割引の文言</div></li>
+    </ul>
 
     <div class="subhead" id="ja-c-tag">
       <h3>必須表記</h3>
@@ -636,6 +683,7 @@ html[data-lang="ja"] .lang-ko,html[data-lang="ko"] .lang-ja{display:none!importa
       <a href="#ko-c-avoid">피해야 할 표현</a>
       <a href="#ko-c-shot">촬영 포인트</a>
       <a href="#ko-c-format">형식별 가이드</a>
+      <a href="#ko-c-thumb">썸네일</a>
       <a href="#ko-c-tag">필수 표기</a>
     </div>
 
@@ -753,6 +801,33 @@ html[data-lang="ja"] .lang-ko,html[data-lang="ko"] .lang-ja{display:none!importa
       <strong>첫컷 후킹 예시 (숏폼·롱폼)</strong>
       「이 스펙에 이 가격?」처럼 궁금증을 만드는 멘트, 또는 「1000FP」 같은 숫자를 앞세운 멘트로 시작해주세요.
     </div>
+
+    <div class="subhead" id="ko-c-thumb">
+      <h3>썸네일 가이드</h3>
+      <p>숏폼 커버와 롱폼 썸네일은 사전 검토 때 영상과 함께 보내주세요.</p>
+    </div>
+    <div class="thumbs">
+      <div class="thumb">
+        <span class="label">숏폼</span>
+        <h3 style="margin:0">커버 9:16 / 그리드 3:4</h3>
+        <p>커버는 9:16으로 만들지만, 프로필 그리드에서는 가운데 3:4만 보여요. 제품과 텍스트는 점선 안쪽에 넣어주세요.</p>
+        <div class="stage" aria-hidden="true"><div class="f916"><div class="safe"><span class="tag">3:4</span><span class="sample">表参道で<br>発見</span></div><span class="ratio">9:16</span></div></div>
+        <div class="mini"><h4>구도</h4><ul><li>에일러론 1000FP 시리즈를 입은 상반신 또는 전신 컷</li><li>팝업 공간이나 설산 백드롭을 배경으로 쓰면 팝업 콘텐츠라는 게 바로 보여요</li><li>밝고 심플한 배경, 흔들림 없는 프레임</li></ul></div>
+        <div class="mini"><h4>텍스트</h4><ul><li>한눈에 들어오는 짧은 한마디 (10자 안팎)</li><li>예: 「表参道で発見」「想像以上に軽い」</li><li>크고 굵은 글씨로, 제품을 가리지 않는 위치에</li></ul></div>
+      </div>
+      <div class="thumb">
+        <span class="label">롱폼</span>
+        <h3 style="margin:0">16:9 / 1280×720 권장</h3>
+        <p>오른쪽 아래에는 영상 길이가 표시되니 텍스트나 제품을 두지 말아주세요.</p>
+        <div class="stage" aria-hidden="true"><div class="f169"><span class="sample">1000FP!!<small>表参道に10日間だけ</small></span><div class="ng"><span>텍스트 금지</span><b>12:34</b></div><span class="ratio">16:9</span></div></div>
+        <div class="mini"><h4>구도</h4><ul><li>인물·제품이 화면의 1/3 이상 크기로, 아우터가 잘 보이게</li><li>아우터 컬러가 배경과 대비되는 구도</li><li>팝업 공간이 함께 보이면 더 좋아요</li></ul></div>
+        <div class="mini"><h4>텍스트</h4><ul><li>클릭하고 싶어지는 후킹 멘트를 크고 깔끔하게</li><li>예: 「1000FP!! この価格なら買わない理由なし」「表参道に10日間だけ」</li><li>제품을 가리지 않는 여백에 배치</li></ul></div>
+      </div>
+    </div>
+    <div class="mini" style="margin:20px 0 8px"><h4>피할 것 (공통)</h4></div>
+    <ul class="check warn">
+      <li><div>얼굴만 클로즈업되어 제품이 안 보이는 컷</div></li><li><div>역광·흔들림·어두움으로 얼굴이나 제품이 잘 안 보이는 컷</div></li><li><div>글씨가 작거나 정보를 너무 많이 넣어 읽기 어려운 텍스트</div></li><li><div>안내받지 않은 가격·할인 문구</div></li>
+    </ul>
 
     <div class="subhead" id="ko-c-tag">
       <h3>필수 표기</h3>
